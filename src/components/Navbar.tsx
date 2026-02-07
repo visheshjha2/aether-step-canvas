@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,11 +23,36 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About' },
-    { to: '/services', label: 'Services' },
-    { to: '/contact', label: 'Contact' },
+    { to: 'home', label: 'Home' },
+    { to: 'about', label: 'About' },
+    { to: 'services', label: 'Services' },
+    { to: 'contact', label: 'Contact' },
   ];
+
+  const handleNavClick = (sectionId: string) => {
+    setIsMobileMenuOpen(false);
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation then scroll
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
+    } else {
+      scrollToSection(sectionId);
+    }
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    if (sectionId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -35,7 +61,7 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'glass-strong py-4' : 'bg-transparent py-6'
+          isScrolled ? 'glass-strong py-4 shadow-sm' : 'bg-transparent py-6'
         }`}
       >
         <nav className="container mx-auto px-6 flex items-center justify-between">
@@ -53,18 +79,14 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
-              <Link
+              <button
                 key={link.to}
-                to={link.to}
-                className={`text-sm tracking-widest uppercase link-underline transition-colors duration-300 ${
-                  location.pathname === link.to
-                    ? 'text-foreground'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
+                onClick={() => handleNavClick(link.to)}
+                className="text-sm tracking-widest uppercase link-underline transition-colors duration-300 text-muted-foreground hover:text-foreground bg-transparent border-none cursor-pointer"
                 style={{ letterSpacing: '0.15em' }}
               >
                 {link.label}
-              </Link>
+              </button>
             ))}
           </div>
 
@@ -120,16 +142,12 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.1 + index * 0.05 }}
                 >
-                  <Link
-                    to={link.to}
-                    className={`text-3xl font-display tracking-tight transition-colors duration-300 ${
-                      location.pathname === link.to
-                        ? 'text-foreground'
-                        : 'text-muted-foreground hover:text-foreground'
-                    }`}
+                  <button
+                    onClick={() => handleNavClick(link.to)}
+                    className="text-3xl font-display tracking-tight transition-colors duration-300 text-muted-foreground hover:text-foreground bg-transparent border-none cursor-pointer"
                   >
                     {link.label}
-                  </Link>
+                  </button>
                 </motion.div>
               ))}
               <motion.div
