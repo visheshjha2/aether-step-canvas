@@ -73,7 +73,7 @@ const CanvasScrollSequence = () => {
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, hsl(38 65% 50% / 0.08) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, hsl(38 35% 50% / 0.1) 0%, transparent 70%)',
             scale: glowScale,
           }}
         />
@@ -92,11 +92,11 @@ const CanvasScrollSequence = () => {
           </motion.div>
         )}
 
-        {/* Subtle vignette overlay */}
+        {/* Vignette overlay */}
         <motion.div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at center, transparent 40%, hsl(0 0% 98%) 100%)',
+            background: 'radial-gradient(ellipse at center, transparent 0%, hsl(0 0% 0%) 100%)',
             opacity: vignetteOpacity,
           }}
         />

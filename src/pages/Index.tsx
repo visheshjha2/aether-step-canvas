@@ -102,7 +102,7 @@ const Index = () => {
       </section>
 
       {/* ═══════════════════ FEATURES ═══════════════════ */}
-      <section className="section-padding bg-secondary">
+      <section className="section-padding bg-aether-charcoal">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -170,8 +170,8 @@ const Index = () => {
 
             <ScrollReveal direction="right" delay={0.2}>
               <div className="relative">
-                <div className="aspect-square bg-secondary rounded-sm overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-secondary to-muted flex items-center justify-center">
+                <div className="aspect-square bg-aether-dark rounded-sm overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-br from-aether-dark to-aether-charcoal flex items-center justify-center">
                     <motion.div
                       className="text-8xl font-display font-light text-accent/20"
                       animate={{ rotate: 360 }}
@@ -216,7 +216,7 @@ const Index = () => {
       </section>
 
       {/* ═══════════════════ SERVICES SECTION ═══════════════════ */}
-      <section id="services" className="section-padding bg-secondary">
+      <section id="services" className="section-padding bg-aether-charcoal">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -342,7 +342,7 @@ const Index = () => {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 bg-card border border-border rounded-sm text-foreground placeholder-muted-foreground focus:border-accent focus:outline-none transition-colors duration-300"
+                          className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground placeholder-muted-foreground focus:border-accent focus:outline-none transition-colors duration-300"
                           placeholder="Your name"
                         />
                       </div>
@@ -355,7 +355,7 @@ const Index = () => {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 bg-card border border-border rounded-sm text-foreground placeholder-muted-foreground focus:border-accent focus:outline-none transition-colors duration-300"
+                          className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground placeholder-muted-foreground focus:border-accent focus:outline-none transition-colors duration-300"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -369,7 +369,7 @@ const Index = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-card border border-border rounded-sm text-foreground focus:border-accent focus:outline-none transition-colors duration-300"
+                        className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground focus:border-accent focus:outline-none transition-colors duration-300"
                       >
                         <option value="">Select a subject</option>
                         <option value="general">General Inquiry</option>
@@ -389,7 +389,7 @@ const Index = () => {
                         onChange={handleChange}
                         required
                         rows={6}
-                        className="w-full px-4 py-3 bg-card border border-border rounded-sm text-foreground placeholder-muted-foreground focus:border-accent focus:outline-none transition-colors duration-300 resize-none"
+                        className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground placeholder-muted-foreground focus:border-accent focus:outline-none transition-colors duration-300 resize-none"
                         placeholder="Tell us about your project or question..."
                       />
                     </div>
@@ -435,7 +435,7 @@ const Index = () => {
                 <div className="space-y-8">
                   {contactInfo.map((info) => (
                     <div key={info.title} className="flex gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 border border-border rounded-sm flex items-center justify-center bg-card">
+                      <div className="flex-shrink-0 w-12 h-12 border border-border rounded-sm flex items-center justify-center">
                         <info.icon className="w-5 h-5 text-accent" />
                       </div>
                       <div>
@@ -454,7 +454,7 @@ const Index = () => {
       </section>
 
       {/* ═══════════════════ CTA SECTION ═══════════════════ */}
-      <section className="section-padding bg-secondary relative overflow-hidden">
+      <section className="section-padding bg-aether-charcoal relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-3xl" />
         </div>
