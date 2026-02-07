@@ -25,38 +25,17 @@ const TextOverlay = ({
     [0, 1, 1, 0]
   );
 
-  const getTransform = () => {
-    switch (direction) {
-      case 'up':
-        return useTransform(
-          scrollYProgress,
-          [scrollStart, scrollStart + 0.05, scrollEnd - 0.05, scrollEnd],
-          [60, 0, 0, -60]
-        );
-      case 'down':
-        return useTransform(
-          scrollYProgress,
-          [scrollStart, scrollStart + 0.05, scrollEnd - 0.05, scrollEnd],
-          [-60, 0, 0, 60]
-        );
-      case 'left':
-        return useTransform(
-          scrollYProgress,
-          [scrollStart, scrollStart + 0.05, scrollEnd - 0.05, scrollEnd],
-          [60, 0, 0, -60]
-        );
-      case 'right':
-        return useTransform(
-          scrollYProgress,
-          [scrollStart, scrollStart + 0.05, scrollEnd - 0.05, scrollEnd],
-          [-60, 0, 0, 60]
-        );
-      default:
-        return useTransform(scrollYProgress, [0, 1], [0, 0]);
-    }
-  };
+  // Determine output range based on direction
+  const isReverse = direction === 'down' || direction === 'right';
+  const outputRange: [number, number, number, number] = isReverse
+    ? [-60, 0, 0, 60]
+    : [60, 0, 0, -60];
 
-  const transform = getTransform();
+  const transform = useTransform(
+    scrollYProgress,
+    [scrollStart, scrollStart + 0.05, scrollEnd - 0.05, scrollEnd],
+    outputRange
+  );
 
   const style = {
     opacity,
