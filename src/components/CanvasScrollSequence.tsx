@@ -35,6 +35,7 @@ const CanvasScrollSequence = () => {
   const bgOpacity = useTransform(smoothProgress, [0, 0.5, 1], [0.3, 0.5, 0.7]);
   const glowScale = useTransform(smoothProgress, [0, 0.5, 1], [1, 1.5, 1]);
   const vignetteOpacity = useTransform(smoothProgress, [0, 0.5, 1], [0.4, 0.6, 0.8]);
+  const scrollIndicatorOpacity = useTransform(smoothProgress, [0, 0.1], [1, 0]);
 
   // Update current frame based on scroll progress
   useEffect(() => {
@@ -198,7 +199,7 @@ const CanvasScrollSequence = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5, duration: 0.8 }}
             style={{
-              opacity: useTransform(smoothProgress, [0, 0.1], [1, 0]),
+              opacity: scrollIndicatorOpacity,
             }}
           >
             <p className="text-xs text-muted-foreground tracking-widest uppercase mb-3">
