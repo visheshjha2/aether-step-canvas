@@ -78,7 +78,7 @@ const FrameCanvas = memo(({ image, className = '' }: FrameCanvasProps) => {
       className={`w-full h-full ${className}`}
       style={{ 
         display: 'block',
-        filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.15))'
+        filter: 'drop-shadow(0 50px 100px rgba(0,0,0,0.8))'
       }}
     />
   );

@@ -12,98 +12,98 @@
 
 @layer base {
   :root {
-    /* Core palette - Bright luxury with warm tones */
-    --background: 0 0% 98%;
-    --foreground: 0 0% 8%;
+    /* Core palette - Deep luxury blacks and refined neutrals */
+    --background: 0 0% 3%;
+    --foreground: 40 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
+    --card: 0 0% 6%;
+    --card-foreground: 40 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 40 20% 95%;
 
-    /* Primary - Rich dark for contrast */
-    --primary: 0 0% 8%;
-    --primary-foreground: 0 0% 98%;
+    /* Primary - Warm cream/off-white for contrast */
+    --primary: 40 25% 94%;
+    --primary-foreground: 0 0% 3%;
 
-    /* Secondary - Warm light gray */
-    --secondary: 40 10% 94%;
-    --secondary-foreground: 0 0% 15%;
+    /* Secondary - Charcoal gray */
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 40 20% 90%;
 
-    /* Muted - Soft warm grays */
-    --muted: 40 10% 92%;
-    --muted-foreground: 0 0% 40%;
+    /* Muted - Subtle grays */
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 55%;
 
-    /* Accent - Warm gold */
-    --accent: 38 65% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Subtle gold hint */
+    --accent: 38 35% 50%;
+    --accent-foreground: 0 0% 3%;
 
     --destructive: 0 62.8% 45%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 40 10% 88%;
-    --input: 40 10% 90%;
-    --ring: 38 65% 50%;
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 38 35% 50%;
 
     --radius: 0.25rem;
 
-    /* Custom brand colors - bright variants */
-    --aether-black: 0 0% 8%;
-    --aether-charcoal: 40 5% 95%;
-    --aether-dark: 40 5% 90%;
-    --aether-gray: 0 0% 70%;
-    --aether-muted: 0 0% 45%;
-    --aether-cream: 40 30% 97%;
-    --aether-gold: 38 65% 50%;
-    --aether-gold-light: 38 55% 65%;
+    /* Custom brand colors */
+    --aether-black: 0 0% 3%;
+    --aether-charcoal: 0 0% 8%;
+    --aether-dark: 0 0% 12%;
+    --aether-gray: 0 0% 25%;
+    --aether-muted: 0 0% 55%;
+    --aether-cream: 40 25% 94%;
+    --aether-gold: 38 35% 50%;
+    --aether-gold-light: 38 40% 70%;
 
     /* Gradient definitions */
-    --gradient-dark: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(40 5% 95%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(40 10% 96%) 50%, hsl(0 0% 97%) 100%);
-    --gradient-vignette: radial-gradient(ellipse at center, transparent 0%, hsl(0 0% 100% / 0.4) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(38 65% 50%) 0%, hsl(38 55% 65%) 100%);
-    --gradient-text: linear-gradient(135deg, hsl(38 65% 40%) 0%, hsl(38 55% 55%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 3%) 0%, hsl(0 0% 8%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 3%) 0%, hsl(0 0% 10%) 50%, hsl(0 0% 5%) 100%);
+    --gradient-vignette: radial-gradient(ellipse at center, transparent 0%, hsl(0 0% 0% / 0.6) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 35% 50%) 0%, hsl(38 40% 70%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(40 25% 94%) 0%, hsl(38 35% 70%) 100%);
 
     /* Shadows */
-    --shadow-sm: 0 2px 8px hsl(0 0% 0% / 0.06);
-    --shadow-md: 0 8px 24px hsl(0 0% 0% / 0.08);
-    --shadow-lg: 0 16px 48px hsl(0 0% 0% / 0.12);
-    --shadow-glow: 0 0 40px hsl(38 65% 50% / 0.2);
+    --shadow-sm: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 8px 24px hsl(0 0% 0% / 0.4);
+    --shadow-lg: 0 16px 48px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 40px hsl(38 35% 50% / 0.15);
 
     /* Typography */
     --font-display: 'Playfair Display', serif;
     --font-body: 'Inter', system-ui, sans-serif;
 
-    /* Sidebar */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 15%;
-    --sidebar-primary: 0 0% 8%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 40 10% 94%;
-    --sidebar-accent-foreground: 0 0% 15%;
-    --sidebar-border: 40 10% 88%;
-    --sidebar-ring: 38 65% 50%;
+    /* Sidebar defaults for dark mode */
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 40 25% 94%;
+    --sidebar-primary-foreground: 0 0% 3%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 38 35% 50%;
   }
 
   /* Light mode is intentionally similar - brand is dark-first */
   .light {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 8%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
-    --primary: 0 0% 8%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 40 10% 94%;
-    --secondary-foreground: 0 0% 15%;
-    --muted: 40 10% 92%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 38 65% 50%;
-    --accent-foreground: 0 0% 100%;
-    --border: 40 10% 88%;
-    --input: 40 10% 90%;
-    --ring: 38 65% 50%;
+    --background: 0 0% 3%;
+    --foreground: 40 20% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 40 20% 95%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 40 20% 95%;
+    --primary: 40 25% 94%;
+    --primary-foreground: 0 0% 3%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 40 20% 90%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 38 35% 50%;
+    --accent-foreground: 0 0% 3%;
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 38 35% 50%;
   }
 }
 
@@ -131,16 +131,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
+    background: hsl(var(--aether-black));
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
+    background: hsl(var(--aether-gray));
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--muted-foreground));
+    background: hsl(var(--aether-muted));
   }
 }
 
@@ -165,17 +165,17 @@
 
   /* Glassmorphism effect */
   .glass {
-    background: hsl(0 0% 100% / 0.8);
+    background: hsl(0 0% 6% / 0.7);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid hsl(var(--border) / 0.5);
   }
 
   .glass-strong {
-    background: hsl(0 0% 100% / 0.92);
+    background: hsl(0 0% 3% / 0.85);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    border: 1px solid hsl(var(--border) / 0.6);
+    border: 1px solid hsl(var(--border) / 0.3);
   }
 
   /* Luxury button styles */
@@ -304,8 +304,8 @@
 
   /* Text selection */
   ::selection {
-    background: hsl(var(--aether-gold) / 0.2);
-    color: hsl(var(--aether-black));
+    background: hsl(var(--aether-gold) / 0.3);
+    color: hsl(var(--aether-cream));
   }
 }
 
