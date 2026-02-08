@@ -15,17 +15,14 @@ const FrameCanvas = memo(({ image, className = '' }: FrameCanvasProps) => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size to match container
     const updateCanvasSize = () => {
       const dpr = window.devicePixelRatio || 1;
       const rect = canvas.getBoundingClientRect();
-      
+
       canvas.width = rect.width * dpr;
       canvas.height = rect.height * dpr;
-      
+
       ctx.scale(dpr, dpr);
-      
-      // Draw the image
       drawImage();
     };
 
@@ -33,11 +30,8 @@ const FrameCanvas = memo(({ image, className = '' }: FrameCanvasProps) => {
       if (!ctx || !image) return;
 
       const rect = canvas.getBoundingClientRect();
-      
-      // Clear canvas
       ctx.clearRect(0, 0, rect.width, rect.height);
 
-      // Calculate aspect ratios
       const imgAspect = image.width / image.height;
       const canvasAspect = rect.width / rect.height;
 
@@ -46,15 +40,13 @@ const FrameCanvas = memo(({ image, className = '' }: FrameCanvasProps) => {
       let offsetX: number;
       let offsetY: number;
 
-      // Cover the canvas while maintaining aspect ratio
+      // Cover the entire canvas while maintaining aspect ratio
       if (imgAspect > canvasAspect) {
-        // Image is wider - fit height
         drawHeight = rect.height;
         drawWidth = drawHeight * imgAspect;
         offsetX = (rect.width - drawWidth) / 2;
         offsetY = 0;
       } else {
-        // Image is taller - fit width
         drawWidth = rect.width;
         drawHeight = drawWidth / imgAspect;
         offsetX = 0;
@@ -65,10 +57,18 @@ const FrameCanvas = memo(({ image, className = '' }: FrameCanvasProps) => {
     };
 
     updateCanvasSize();
+
+    // Handle resize and orientation change for mobile
     window.addEventListener('resize', updateCanvasSize);
+    window.addEventListener('orientationchange', () => {
+      setTimeout(updateCanvasSize, 100);
+    });
 
     return () => {
       window.removeEventListener('resize', updateCanvasSize);
+      window.removeEventListener('orientationchange', () => {
+        setTimeout(updateCanvasSize, 100);
+      });
     };
   }, [image]);
 
@@ -76,9 +76,9 @@ const FrameCanvas = memo(({ image, className = '' }: FrameCanvasProps) => {
     <canvas
       ref={canvasRef}
       className={`w-full h-full ${className}`}
-      style={{ 
+      style={{
         display: 'block',
-        filter: 'drop-shadow(0 50px 100px rgba(0,0,0,0.8))'
+        touchAction: 'pan-y',
       }}
     />
   );
