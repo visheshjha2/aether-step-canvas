@@ -40,13 +40,13 @@ const FrameCanvas = memo(({ image, className = '' }: FrameCanvasProps) => {
       let offsetX: number;
       let offsetY: number;
 
-      // Contain: fit the entire image centered within the canvas
+      // Cover: fill the entire canvas, centered, no margins
       if (imgAspect > canvasAspect) {
-        drawWidth = rect.width;
-        drawHeight = drawWidth / imgAspect;
-      } else {
         drawHeight = rect.height;
         drawWidth = drawHeight * imgAspect;
+      } else {
+        drawWidth = rect.width;
+        drawHeight = drawWidth / imgAspect;
       }
 
       offsetX = (rect.width - drawWidth) / 2;
